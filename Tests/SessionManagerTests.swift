@@ -3,7 +3,7 @@
 //  SkeletonKeyTests
 //
 //  Created by Chad Pavliska on 5/14/19.
-//  Copyright © 2019 AP Studio, LLC. All rights reserved.
+//  Copyright © 2019 Chad Pavliska. All rights reserved.
 //
 
 import XCTest

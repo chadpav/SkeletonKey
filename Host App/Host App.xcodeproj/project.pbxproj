@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D6275EA8228D924200B6E625 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EA7228D924200B6E625 /* UserProvider.swift */; };
+		D6275EE222933E3000B6E625 /* SkeletonKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6275EE122933E3000B6E625 /* SkeletonKey.framework */; };
+		D6275EE322933E8900B6E625 /* SkeletonKey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6275EE122933E3000B6E625 /* SkeletonKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D90DA904225430DC005B35DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DA903225430DC005B35DE /* AppDelegate.swift */; };
 		D90DA906225430DC005B35DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DA905225430DC005B35DE /* ViewController.swift */; };
 		D90DA909225430DC005B35DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DA907225430DC005B35DE /* Main.storyboard */; };
 		D90DA90B225430DD005B35DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DA90A225430DD005B35DE /* Assets.xcassets */; };
 		D90DA90E225430DD005B35DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DA90C225430DD005B35DE /* LaunchScreen.storyboard */; };
-		D90DA91722543794005B35DE /* UserManagerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90DA91622543794005B35DE /* UserManagerKit.framework */; };
-		D90DA919225438F7005B35DE /* UserManagerKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D90DA91622543794005B35DE /* UserManagerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D90DA919225438F7005B35DE /* UserManagerKit.framework in CopyFiles */,
+				D6275EE322933E8900B6E625 /* SkeletonKey.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		D6275EA7228D924200B6E625 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		D6275EE122933E3000B6E625 /* SkeletonKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkeletonKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DA900225430DC005B35DE /* Host App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Host App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DA903225430DC005B35DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D90DA905225430DC005B35DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D90DA91722543794005B35DE /* UserManagerKit.framework in Frameworks */,
+				D6275EE222933E3000B6E625 /* SkeletonKey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +89,7 @@
 		D90DA91522543794005B35DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6275EE122933E3000B6E625 /* SkeletonKey.framework */,
 				D90DA91622543794005B35DE /* UserManagerKit.framework */,
 			);
 			name = Frameworks;
@@ -110,7 +112,7 @@
 			dependencies = (
 			);
 			name = "Host App";
-			productName = "iOS Example";
+			productName = "Host App";
 			productReference = D90DA900225430DC005B35DE /* Host App.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -122,7 +124,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "AP Studio, LLC";
+				ORGANIZATIONNAME = SkeletonKey;
 				TargetAttributes = {
 					D90DA8FF225430DC005B35DE = {
 						CreatedOnToolsVersion = 10.2;

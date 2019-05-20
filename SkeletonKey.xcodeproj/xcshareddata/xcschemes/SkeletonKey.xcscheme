@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D90DA8D322542C80005B35DE"
-               BuildableName = "SkeletonKey_iOS.framework"
+               BuildableName = "SkeletonKey.framework"
                BlueprintName = "SkeletonKey-iOS"
                ReferencedContainer = "container:SkeletonKey.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90DA8D322542C80005B35DE"
-            BuildableName = "SkeletonKey_iOS.framework"
+            BuildableName = "SkeletonKey.framework"
             BlueprintName = "SkeletonKey-iOS"
             ReferencedContainer = "container:SkeletonKey.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90DA8D322542C80005B35DE"
-            BuildableName = "SkeletonKey_iOS.framework"
+            BuildableName = "SkeletonKey.framework"
             BlueprintName = "SkeletonKey-iOS"
             ReferencedContainer = "container:SkeletonKey.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D90DA8D322542C80005B35DE"
-            BuildableName = "SkeletonKey_iOS.framework"
+            BuildableName = "SkeletonKey.framework"
             BlueprintName = "SkeletonKey-iOS"
             ReferencedContainer = "container:SkeletonKey.xcodeproj">
          </BuildableReference>

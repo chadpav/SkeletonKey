@@ -3,7 +3,7 @@
 //  iOS Example
 //
 //  Created by Chad Pavliska on May 12, 2019.
-//  Copyright © 2019 AP Studio, LLC. All rights reserved.
+//  Copyright © 2019 Chad Pavliska. All rights reserved.
 //
 
 import UIKit
