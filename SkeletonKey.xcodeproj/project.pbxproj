@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D6275E9E228C3DAB00B6E625 /* KeyGenStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275E9D228C3DAB00B6E625 /* KeyGenStrategy.swift */; };
+		D6275EA0228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275E9F228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift */; };
+		D6275EA2228C3E5400B6E625 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EA1228C3E5400B6E625 /* Configuration.swift */; };
+		D6275EA6228D914D00B6E625 /* IUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EA5228D914D00B6E625 /* IUserProvider.swift */; };
+		D6275EAB228D9F7700B6E625 /* MockUserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EA9228D9D4A00B6E625 /* MockUserProvider.swift */; };
+		D6275EAD228EFC8300B6E625 /* NewDeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EAC228EFC8300B6E625 /* NewDeviceState.swift */; };
+		D6275EAF228EFDD700B6E625 /* NewDeviceStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EAE228EFDD700B6E625 /* NewDeviceStateTests.swift */; };
+		D6275EB1228EFF4300B6E625 /* NewAppInstanceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EB0228EFF4300B6E625 /* NewAppInstanceState.swift */; };
+		D6275EB3228F016F00B6E625 /* NewAppInstanceStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EB2228F016F00B6E625 /* NewAppInstanceStateTests.swift */; };
+		D6275EB5228F021300B6E625 /* NewUserStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EB4228F021300B6E625 /* NewUserStateTests.swift */; };
+		D6275EB7228F032800B6E625 /* NewSessionStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EB6228F032800B6E625 /* NewSessionStateTests.swift */; };
+		D6275EB9229184D500B6E625 /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EB8229184D500B6E625 /* TopMostViewController.swift */; };
+		D6275EBE22918ED500B6E625 /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EBD22918ED500B6E625 /* SigninPresenter.swift */; };
+		D6275EC02291C70B00B6E625 /* DeletedUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */; };
+		D6275EC32291DA2A00B6E625 /* MockSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */; };
+		D6275EC52291DEDC00B6E625 /* DeletedUserStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */; };
+		D65E2CA522899ADE001B612E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA422899ADE001B612E /* SessionManager.swift */; };
+		D65E2CA72289A0EB001B612E /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA62289A0EB001B612E /* SessionState.swift */; };
+		D65E2CAA2289F0BF001B612E /* DataStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA92289F0BF001B612E /* DataStoreService.swift */; };
+		D65E2CAD2289F3E2001B612E /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CAC2289F3E2001B612E /* AppUser.swift */; };
+		D65E2CAF228AE148001B612E /* StateProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CAE228AE148001B612E /* StateProcessor.swift */; };
+		D65E2CB2228AE187001B612E /* NewUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB1228AE187001B612E /* NewUserState.swift */; };
+		D65E2CB4228AE1AC001B612E /* NewSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB3228AE1AC001B612E /* NewSessionState.swift */; };
+		D65E2CB6228AE200001B612E /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB5228AE200001B612E /* SessionManagerTests.swift */; };
+		D65E2CBA228AECE0001B612E /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB8228AE94F001B612E /* MockDataService.swift */; };
+		D674A497228BB11500D543B8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D674A496228BB11500D543B8 /* Keychain.swift */; };
+		D90DA8DE22542C80005B35DE /* SkeletonKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90DA8D422542C80005B35DE /* SkeletonKey.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D90DA8DF22542C80005B35DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D90DA8CB22542C80005B35DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D90DA8D322542C80005B35DE;
+			remoteInfo = UserManagerKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D6275E9D228C3DAB00B6E625 /* KeyGenStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyGenStrategy.swift; sourceTree = "<group>"; };
+		D6275E9F228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKeyGenStrategy.swift; sourceTree = "<group>"; };
+		D6275EA1228C3E5400B6E625 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D6275EA5228D914D00B6E625 /* IUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserProvider.swift; sourceTree = "<group>"; };
+		D6275EA9228D9D4A00B6E625 /* MockUserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserProvider.swift; sourceTree = "<group>"; };
+		D6275EAC228EFC8300B6E625 /* NewDeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceState.swift; sourceTree = "<group>"; };
+		D6275EAE228EFDD700B6E625 /* NewDeviceStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDeviceStateTests.swift; sourceTree = "<group>"; };
+		D6275EB0228EFF4300B6E625 /* NewAppInstanceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppInstanceState.swift; sourceTree = "<group>"; };
+		D6275EB2228F016F00B6E625 /* NewAppInstanceStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppInstanceStateTests.swift; sourceTree = "<group>"; };
+		D6275EB4228F021300B6E625 /* NewUserStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserStateTests.swift; sourceTree = "<group>"; };
+		D6275EB6228F032800B6E625 /* NewSessionStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionStateTests.swift; sourceTree = "<group>"; };
+		D6275EB8229184D500B6E625 /* TopMostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMostViewController.swift; sourceTree = "<group>"; };
+		D6275EBD22918ED500B6E625 /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
+		D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserState.swift; sourceTree = "<group>"; };
+		D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignInPresenter.swift; sourceTree = "<group>"; };
+		D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserStateTests.swift; sourceTree = "<group>"; };
+		D65E2CA422899ADE001B612E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		D65E2CA62289A0EB001B612E /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
+		D65E2CA92289F0BF001B612E /* DataStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreService.swift; sourceTree = "<group>"; };
+		D65E2CAC2289F3E2001B612E /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		D65E2CAE228AE148001B612E /* StateProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProcessor.swift; sourceTree = "<group>"; };
+		D65E2CB1228AE187001B612E /* NewUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserState.swift; sourceTree = "<group>"; };
+		D65E2CB3228AE1AC001B612E /* NewSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionState.swift; sourceTree = "<group>"; };
+		D65E2CB5228AE200001B612E /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
+		D65E2CB8228AE94F001B612E /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		D674A496228BB11500D543B8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		D90DA8D422542C80005B35DE /* SkeletonKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DA8D822542C80005B35DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90DA8DD22542C80005B35DE /* SkeletonKeyTests - iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkeletonKeyTests - iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90DA8E422542C80005B35DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D90DA8D122542C80005B35DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DA8DA22542C80005B35DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90DA8DE22542C80005B35DE /* SkeletonKey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D6275E9C228C3D8500B6E625 /* Key Gen */ = {
+			isa = PBXGroup;
+			children = (
+				D6275E9D228C3DAB00B6E625 /* KeyGenStrategy.swift */,
+				D6275E9F228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift */,
+			);
+			path = "Key Gen";
+			sourceTree = "<group>";
+		};
+		D6275EBA229185DE00B6E625 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D6275EBD22918ED500B6E625 /* SigninPresenter.swift */,
+				D6275EB8229184D500B6E625 /* TopMostViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D65E2CA82289F0A7001B612E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D65E2CA92289F0BF001B612E /* DataStoreService.swift */,
+				D674A496228BB11500D543B8 /* Keychain.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D65E2CAB2289F3D3001B612E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D65E2CAC2289F3E2001B612E /* AppUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65E2CB0228AE164001B612E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */,
+				D6275EA5228D914D00B6E625 /* IUserProvider.swift */,
+				D6275EB0228EFF4300B6E625 /* NewAppInstanceState.swift */,
+				D6275EAC228EFC8300B6E625 /* NewDeviceState.swift */,
+				D65E2CB3228AE1AC001B612E /* NewSessionState.swift */,
+				D65E2CB1228AE187001B612E /* NewUserState.swift */,
+				D65E2CAE228AE148001B612E /* StateProcessor.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		D65E2CB7228AE922001B612E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D65E2CB8228AE94F001B612E /* MockDataService.swift */,
+				D6275EA9228D9D4A00B6E625 /* MockUserProvider.swift */,
+				D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D90DA8CA22542C80005B35DE = {
+			isa = PBXGroup;
+			children = (
+				D90DA8D622542C80005B35DE /* Source */,
+				D90DA8EE22542E0B005B35DE /* Resources */,
+				D90DA8E122542C80005B35DE /* Tests */,
+				D90DA8D522542C80005B35DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D90DA8D522542C80005B35DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D90DA8D422542C80005B35DE /* SkeletonKey.framework */,
+				D90DA8DD22542C80005B35DE /* SkeletonKeyTests - iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D90DA8D622542C80005B35DE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D6275EBA229185DE00B6E625 /* Presentation */,
+				D6275E9C228C3D8500B6E625 /* Key Gen */,
+				D65E2CB0228AE164001B612E /* State */,
+				D65E2CAB2289F3D3001B612E /* Models */,
+				D65E2CA82289F0A7001B612E /* Services */,
+				D90DA8D822542C80005B35DE /* Info.plist */,
+				D65E2CA422899ADE001B612E /* SessionManager.swift */,
+				D65E2CA62289A0EB001B612E /* SessionState.swift */,
+				D6275EA1228C3E5400B6E625 /* Configuration.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D90DA8E122542C80005B35DE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D90DA8E422542C80005B35DE /* Info.plist */,
+				D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */,
+				D6275EB2228F016F00B6E625 /* NewAppInstanceStateTests.swift */,
+				D6275EAE228EFDD700B6E625 /* NewDeviceStateTests.swift */,
+				D6275EB6228F032800B6E625 /* NewSessionStateTests.swift */,
+				D6275EB4228F021300B6E625 /* NewUserStateTests.swift */,
+				D65E2CB5228AE200001B612E /* SessionManagerTests.swift */,
+				D65E2CB7228AE922001B612E /* Mocks */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D90DA8EE22542E0B005B35DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D90DA8CF22542C80005B35DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D90DA8D322542C80005B35DE /* SkeletonKey-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90DA8E822542C80005B35DE /* Build configuration list for PBXNativeTarget "SkeletonKey-iOS" */;
+			buildPhases = (
+				D90DA8CF22542C80005B35DE /* Headers */,
+				D90DA8D022542C80005B35DE /* Sources */,
+				D90DA8D122542C80005B35DE /* Frameworks */,
+				D90DA8D222542C80005B35DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SkeletonKey-iOS";
+			productName = UserManagerKit;
+			productReference = D90DA8D422542C80005B35DE /* SkeletonKey.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D90DA8DC22542C80005B35DE /* SkeletonKeyTests - iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90DA8EB22542C80005B35DE /* Build configuration list for PBXNativeTarget "SkeletonKeyTests - iOS" */;
+			buildPhases = (
+				D90DA8D922542C80005B35DE /* Sources */,
+				D90DA8DA22542C80005B35DE /* Frameworks */,
+				D90DA8DB22542C80005B35DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D90DA8E022542C80005B35DE /* PBXTargetDependency */,
+			);
+			name = "SkeletonKeyTests - iOS";
+			productName = UserManagerKitTests;
+			productReference = D90DA8DD22542C80005B35DE /* SkeletonKeyTests - iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D90DA8CB22542C80005B35DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = SkeletonKey;
+				TargetAttributes = {
+					D90DA8D322542C80005B35DE = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+					D90DA8DC22542C80005B35DE = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = D90DA8CE22542C80005B35DE /* Build configuration list for PBXProject "SkeletonKey" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D90DA8CA22542C80005B35DE;
+			productRefGroup = D90DA8D522542C80005B35DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D90DA8D322542C80005B35DE /* SkeletonKey-iOS */,
+				D90DA8DC22542C80005B35DE /* SkeletonKeyTests - iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D90DA8D222542C80005B35DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DA8DB22542C80005B35DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D90DA8D022542C80005B35DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6275EAD228EFC8300B6E625 /* NewDeviceState.swift in Sources */,
+				D65E2CB2228AE187001B612E /* NewUserState.swift in Sources */,
+				D65E2CAD2289F3E2001B612E /* AppUser.swift in Sources */,
+				D65E2CAF228AE148001B612E /* StateProcessor.swift in Sources */,
+				D6275EC02291C70B00B6E625 /* DeletedUserState.swift in Sources */,
+				D65E2CAA2289F0BF001B612E /* DataStoreService.swift in Sources */,
+				D65E2CA522899ADE001B612E /* SessionManager.swift in Sources */,
+				D6275EA6228D914D00B6E625 /* IUserProvider.swift in Sources */,
+				D6275EBE22918ED500B6E625 /* SigninPresenter.swift in Sources */,
+				D6275EB1228EFF4300B6E625 /* NewAppInstanceState.swift in Sources */,
+				D674A497228BB11500D543B8 /* Keychain.swift in Sources */,
+				D65E2CA72289A0EB001B612E /* SessionState.swift in Sources */,
+				D65E2CB4228AE1AC001B612E /* NewSessionState.swift in Sources */,
+				D6275EA0228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift in Sources */,
+				D6275E9E228C3DAB00B6E625 /* KeyGenStrategy.swift in Sources */,
+				D6275EB9229184D500B6E625 /* TopMostViewController.swift in Sources */,
+				D6275EA2228C3E5400B6E625 /* Configuration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90DA8D922542C80005B35DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6275EAB228D9F7700B6E625 /* MockUserProvider.swift in Sources */,
+				D6275EB5228F021300B6E625 /* NewUserStateTests.swift in Sources */,
+				D65E2CB6228AE200001B612E /* SessionManagerTests.swift in Sources */,
+				D6275EAF228EFDD700B6E625 /* NewDeviceStateTests.swift in Sources */,
+				D6275EB7228F032800B6E625 /* NewSessionStateTests.swift in Sources */,
+				D65E2CBA228AECE0001B612E /* MockDataService.swift in Sources */,
+				D6275EC32291DA2A00B6E625 /* MockSignInPresenter.swift in Sources */,
+				D6275EC52291DEDC00B6E625 /* DeletedUserStateTests.swift in Sources */,
+				D6275EB3228F016F00B6E625 /* NewAppInstanceStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D90DA8E022542C80005B35DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D90DA8D322542C80005B35DE /* SkeletonKey-iOS */;
+			targetProxy = D90DA8DF22542C80005B35DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D90DA8E622542C80005B35DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D90DA8E722542C80005B35DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D90DA8E922542C80005B35DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKey-iOS";
+				PRODUCT_NAME = SkeletonKey;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D90DA8EA22542C80005B35DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKey-iOS";
+				PRODUCT_NAME = SkeletonKey;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D90DA8EC22542C80005B35DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RY3532X6F7;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKeyTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D90DA8ED22542C80005B35DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RY3532X6F7;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKeyTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D90DA8CE22542C80005B35DE /* Build configuration list for PBXProject "SkeletonKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DA8E622542C80005B35DE /* Debug */,
+				D90DA8E722542C80005B35DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D90DA8E822542C80005B35DE /* Build configuration list for PBXNativeTarget "SkeletonKey-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DA8E922542C80005B35DE /* Debug */,
+				D90DA8EA22542C80005B35DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D90DA8EB22542C80005B35DE /* Build configuration list for PBXNativeTarget "SkeletonKeyTests - iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90DA8EC22542C80005B35DE /* Debug */,
+				D90DA8ED22542C80005B35DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D90DA8CB22542C80005B35DE /* Project object */;
+}
