@@ -18,9 +18,6 @@ Pod::Spec.new do |s|
   s.authors = { 'PROJECT_OWNER' => 'chadpav@gmail.com' }
   s.source = { :git => 'https://github.com/chadpav/SkeletonKeyTest.git', :tag => s.version }
   s.ios.deployment_target = '10.0'
-  s.source_files = 'Source/*.{h,m,swift}'
-  s.resource_bundles = {
-    'SkeletonKey' => ['Resources/**/*.{png}']
-  }
+  s.source_files = 'Source/**/*.{h,m,swift}'
   s.swift_version = '5.0'
 end
