@@ -86,7 +86,7 @@ class SigninPresenter: SigninPresenterProtocol {
 
 
         // SIGN IN BUTTON
-        signInButton.setTitle("\(displayName)", for: .normal)
+        signInButton.setTitle("\(displayName.isEmpty ? "User with no name" : displayName)", for: .normal)
         panelView.addSubview(signInButton)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
