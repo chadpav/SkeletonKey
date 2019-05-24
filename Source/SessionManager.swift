@@ -99,8 +99,8 @@ public class SessionManager {
      the framework performs magic.
     */
     var processor: StateProcessor?
-    var onCompletion: ((AppUser) -> Void)?
-    public func processState(completion: ((AppUser) -> Void)?) {
+    var onCompletion: ((AppUser?, Error?) -> Void)?
+    public func processState(completion: ((AppUser?, Error?) -> Void)?) {
         onCompletion = completion
         let state = checkState()
         processor = state.stateProcessor(configuration, presenter)
@@ -125,7 +125,10 @@ public class SessionManager {
 
     internal func finish() {
         if let appUser = dataStoreService.getAppUser(by: dataStoreService.currentAppUserID ?? "") {
-            onCompletion?(appUser)
+            onCompletion?(appUser, nil)
+        } else {
+            // TODO: return an error
+            onCompletion?(nil, nil)
         }
     }
 }
@@ -135,7 +138,7 @@ extension SessionManager: SignInDelegate {
     public func userSelected(appUser: AppUser) {
         dataStoreService.currentAppUserID = appUser.uid
         dataStoreService.isUserSet = true
-        onCompletion?(appUser)
+        onCompletion?(appUser, nil)
     }
 
     public func createNewUser() {
@@ -143,11 +146,19 @@ extension SessionManager: SignInDelegate {
             dataStoreService.save(appDeviceID: configuration.deviceKeyGenerator.generate())
         }
 
-        let appUser = configuration.userProvider.provideUser()
-        dataStoreService.save(currentAppUser: appUser)
-        dataStoreService.currentAppUserID = appUser.uid
-        dataStoreService.isUserSet = true
-        onCompletion?(appUser)
+        configuration.userProvider.provideUser { appUser, error in
+            if let error = error {
+                self.onCompletion?(nil, error)
+            } else {
+                if let appUser = appUser {
+                    self.dataStoreService.save(currentAppUser: appUser)
+                    self.dataStoreService.currentAppUserID = appUser.uid
+                    self.dataStoreService.isUserSet = true
+                }
+                self.onCompletion?(appUser, nil)
+            }
+
+        }
     }
 
 }

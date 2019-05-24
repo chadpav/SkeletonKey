@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol IUserProvider {
-    func provideUser() -> AppUser
+    func provideUser(completion: @escaping (AppUser?, Error?) -> Void)
 }
