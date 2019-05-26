@@ -11,11 +11,13 @@ import SkeletonKey
 
 class UserProvider: IUserProvider {
 
-    func provideUser() -> AppUser {
+    let appUser = AppUser(uid: UUID().uuidString, displayName: "my.email@gmail.com", userName: nil, password: nil)
+
+    func provideUser(completion: @escaping (AppUser?, Error?) -> Void) {
 
         // IMPLEMENTATION: Create a real user account for your app and provide the required parameters to AppUser below
 
-        return AppUser(uid: UUID().uuidString, displayName: "chadpav@gmail.com", userName: nil, password: nil)
+        completion(appUser, nil)
     }
 
 }

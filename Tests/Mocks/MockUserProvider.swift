@@ -10,10 +10,12 @@ import Foundation
 import SkeletonKey
 
 class MockUserProvider: IUserProvider {
+    let appUser = AppUser(uid: "1234", displayName: "Display Name", userName: "username", password: "pass1234")
 
     public init() { }
-    
-    func provideUser() -> AppUser {
-        return AppUser(uid: "1234", displayName: "Display Name", userName: "username", password: "pass1234")
+
+    func provideUser(completion: @escaping (AppUser?, Error?) -> Void) {
+        completion(appUser, nil)
     }
+
 }

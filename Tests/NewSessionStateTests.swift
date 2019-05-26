@@ -33,7 +33,7 @@ class NewSessionStateTests: XCTestCase {
 
         let expectation = self.expectation(description: "Processing")
 
-        manager.processState(completion: { (appUser) in
+        manager.processState(completion: { (appUser, error) in
             expectation.fulfill()
         })
 

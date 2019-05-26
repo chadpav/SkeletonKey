@@ -45,8 +45,13 @@ class ViewController: UITableViewController {
         guard let manager = manager else { return }
 
         print("Processing \(manager.checkState()) state.")
-        manager.processState { (appUser) in
-            print("AppUser is \(appUser.displayName ?? "")")
+        manager.processState { (appUser, error) in
+            if let error = error {
+                print("Did not create app user. Error: \(error.localizedDescription)")
+            }
+            if let appUser = appUser {
+                print("AppUser is \(appUser.displayName ?? "")")
+            }
             self.tableView.reloadData()
         }
     }
