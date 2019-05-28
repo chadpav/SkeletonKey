@@ -4,9 +4,9 @@ env:
   global:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
-  - WORKSPACE="UserManagerKit.xcworkspace"
-  - IOS_FRAMEWORK_SCHEME="UserManagerKit"
-  - EXAMPLE_SCHEME="iOS Example"
+  - WORKSPACE="SkeletonKey.xcworkspace"
+  - IOS_FRAMEWORK_SCHEME="SkeletonKey"
+  - EXAMPLE_SCHEME="Host App"
   matrix:
     - DESTINATION="OS=12.2,name=iPhone XS"       SCHEME="$IOS_FRAMEWORK_SCHEME" POD_LINT="NO"
     - DESTINATION="OS=11.4,name=iPhone X"        SCHEME="$IOS_FRAMEWORK_SCHEME" POD_LINT="NO"
@@ -30,4 +30,4 @@ script:
       pod lib lint;
     fi
 
-  - CheckCocoaPodsQualityIndexes.rb UserManagerKit
+  - CheckCocoaPodsQualityIndexes.rb SkeletonKey

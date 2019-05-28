@@ -8,12 +8,12 @@ When you commit a change, please add a note to [CHANGELOG.md](CHANGELOG.md).
 
 ## Release process
 
-1. Confirm the build is [passing in travis](https://travis-ci.org/chadpav/UserManagerKit)
+1. Confirm the build is [passing in travis](https://travis-ci.org/chadpav/SkeletonKey)
    1. This automatically checks the Podfile is building
 2. Push a release commit
    1. Create a new Master section at the top
    2. Rename the old Master section like:
-          ## [1.0.5](https://github.com/chadpav/UserManagerKit/releases/tag/1.0.5)
+          ## [1.0.5](https://github.com/chadpav/SkeletonKey/releases/tag/1.0.5)
           Released on 2016-02-14.
    3. Update the Podspec version number
 3. Create a GitHub release
@@ -23,5 +23,5 @@ When you commit a change, please add a note to [CHANGELOG.md](CHANGELOG.md).
    1. `pod trunk push`
 4. Create Carthage binaries
    1. `carthage build --no-skip-current`
-   2. `carthage archive UserManagerKit`
+   2. `carthage archive SkeletonKey`
    3. Add to the GitHub release

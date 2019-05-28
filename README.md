@@ -1,14 +1,14 @@
 # WARNING
 
-Thank you for using UserManagerKit. Before you release your awesome project to the world, complete the following steps.
+Thank you for using SkeletonKey. Before you release your awesome project to the world, complete the following steps.
 
 THIS LIST IS EASY, CHECK IT OFF ONE-BY-ONE BABY!
 
- - [ ] Open the project in Xcode and add features to UserManagerKit
+ - [ ] Open the project in Xcode and add features to SkeletonKey
  - [ ] Make sure you are using Swift 4 ("Convert to latest Swift syntax")
  - [ ] Fix all build errors and warnings, add tests (yes really)
  - [ ] Add a screenshot or AT LEAST some picture, and fill in this readme
- - [ ] Add all details to your [Podspec](UserManagerKit.podspec)
+ - [ ] Add all details to your [Podspec](SkeletonKey.podspec)
  - [ ] Delete all this crap up here
  - [ ] Make one release (full steps are in [CONTRIBUTING.md] in case you forget)
 
@@ -16,12 +16,12 @@ THEN YOU'RE DONE, GO STAR [swift4-module-template](https://github.com/fulldecent
 
 ----
 
-# UserManagerKit
+# SkeletonKey
 
-[![CI Status](http://img.shields.io/travis/chadpav/UserManagerKit.svg?style=flat)](https://travis-ci.org/chadpav/UserManagerKit)
-[![Version](https://img.shields.io/cocoapods/v/UserManagerKit.svg?style=flat)](https://cocoapods.org/pods/UserManagerKit)
-[![License](https://img.shields.io/cocoapods/l/UserManagerKit.svg?style=flat)](https://cocoapods.org/pods/UserManagerKit)
-[![Platform](https://img.shields.io/cocoapods/p/UserManagerKit.svg?style=flat)](https://cocoapods.org/pods/UserManagerKit)
+[![CI Status](http://img.shields.io/travis/chadpav/SkeletonKey.svg?style=flat)](https://travis-ci.org/chadpav/SkeletonKey)
+[![Version](https://img.shields.io/cocoapods/v/SkeletonKey.svg?style=flat)](https://cocoapods.org/pods/SkeletonKey)
+[![License](https://img.shields.io/cocoapods/l/SkeletonKey.svg?style=flat)](https://cocoapods.org/pods/SkeletonKey)
+[![Platform](https://img.shields.io/cocoapods/p/SkeletonKey.svg?style=flat)](https://cocoapods.org/pods/SkeletonKey)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 <a href="https://placehold.it/400?text=Screen+shot"><img width=200 height=200 src="https://placehold.it/400?text=Screen+shot" alt="Screenshot" /></a>
@@ -45,12 +45,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 $ gem install cocoapods
 ```
 
-To integrate UserManagerKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate SkeletonKey into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
 
-pod 'UserManagerKit'
+pod 'SkeletonKey'
 ```
 
 Then, run the following command:
@@ -71,13 +71,13 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate UserManagerKit into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate SkeletonKey into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "chadpav/UserManagerKit" ~> 0.1
+github "chadpav/SkeletonKey" ~> 0.1
 ```
 
-Run `carthage update` to build the framework and drag the built `UserManagerKit`.framework into your Xcode project.
+Run `carthage update` to build the framework and drag the built `SkeletonKey`.framework into your Xcode project.
 
 
 ## Author
@@ -87,4 +87,4 @@ Chad Pavliska
 
 ## License
 
-UserManagerKit is available under the MIT license. See the LICENSE file for more info.
+SkeletonKey is available under the MIT license. See the LICENSE file for more info.

@@ -42,7 +42,7 @@
 			containerPortal = D90DA8CB22542C80005B35DE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D90DA8D322542C80005B35DE;
-			remoteInfo = UserManagerKit;
+			remoteInfo = SkeletonKey;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -241,7 +241,7 @@
 			dependencies = (
 			);
 			name = "SkeletonKey-iOS";
-			productName = UserManagerKit;
+			productName = SkeletonKey;
 			productReference = D90DA8D422542C80005B35DE /* SkeletonKey.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -259,7 +259,7 @@
 				D90DA8E022542C80005B35DE /* PBXTargetDependency */,
 			);
 			name = "SkeletonKeyTests - iOS";
-			productName = UserManagerKitTests;
+			productName = SkeletonKeyTests;
 			productReference = D90DA8DD22542C80005B35DE /* SkeletonKeyTests - iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};

@@ -40,7 +40,6 @@
 		D90DA90A225430DD005B35DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90DA90D225430DD005B35DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90DA90F225430DD005B35DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D90DA91622543794005B35DE /* UserManagerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserManagerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				D6275EE122933E3000B6E625 /* SkeletonKey.framework */,
-				D90DA91622543794005B35DE /* UserManagerKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
