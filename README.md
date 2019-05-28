@@ -4,15 +4,11 @@ Thank you for using SkeletonKey. Before you release your awesome project to the 
 
 THIS LIST IS EASY, CHECK IT OFF ONE-BY-ONE BABY!
 
- - [ ] Open the project in Xcode and add features to SkeletonKey
- - [ ] Make sure you are using Swift 4 ("Convert to latest Swift syntax")
  - [ ] Fix all build errors and warnings, add tests (yes really)
  - [ ] Add a screenshot or AT LEAST some picture, and fill in this readme
  - [ ] Add all details to your [Podspec](SkeletonKey.podspec)
  - [ ] Delete all this crap up here
  - [ ] Make one release (full steps are in [CONTRIBUTING.md] in case you forget)
-
-THEN YOU'RE DONE, GO STAR [swift4-module-template](https://github.com/fulldecent/swift4-module-template) FOR UPDATES.
 
 ----
 
