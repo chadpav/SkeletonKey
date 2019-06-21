@@ -141,4 +141,40 @@ class SessionManagerTests: XCTestCase {
         XCTAssertTrue(manager.isUserSet)
         XCTAssertEqual(manager.appUsers.count, 1)
     }
+
+    func testUpdateExistingAppUser() {
+        let mock = MockDataService()
+
+        // persist user without a password first
+        let appUser = AppUser(uid: "aUser", displayName: "", userName: nil, password: nil)
+        mock.save(currentAppUser: appUser)
+
+        let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
+        let manager = SessionManager(configuration: config)
+
+        // Assert preconditions
+        XCTAssertEqual(manager.currentAppUserID, appUser.uid)
+
+        let updatedAppUser = AppUser(uid: "aUser", displayName: "Johnny Appleseed", userName: "japple@icloud.com", password: "pass1234")
+        manager.updateAppUser(updatedAppUser)
+
+        XCTAssertEqual(manager.currentAppUserID, appUser.uid)
+        XCTAssertEqual(manager.appUsers.first?.password, "pass1234")
+    }
+
+    func testUpdateFailsWhenUserNotFound() {
+        let mock = MockDataService()
+
+        let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
+        let manager = SessionManager(configuration: config)
+
+        XCTAssertEqual(manager.appUsers.count, 0)
+        XCTAssertFalse(manager.isUserSet)
+
+        let updatedAppUser = AppUser(uid: "aUser", displayName: "Johnny Appleseed", userName: "japple@icloud.com", password: "pass1234")
+        manager.updateAppUser(updatedAppUser)
+
+        XCTAssertEqual(manager.appUsers.count, 0)
+        XCTAssertFalse(manager.isUserSet)
+    }
 }
