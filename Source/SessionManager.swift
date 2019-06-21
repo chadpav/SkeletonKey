@@ -55,6 +55,12 @@ public class SessionManager {
 
     // MARK: Functions
 
+    public func updateAppUser(_ appUser: AppUser) {
+        if appUsers.filter({ return $0.uid == appUser.uid }).count > 0 {
+            dataStoreService.save(currentAppUser: appUser)
+        }
+    }
+
     /**
      Return the current state of the session but will not alter the state.
     */
