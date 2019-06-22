@@ -69,8 +69,8 @@ internal class DataStoreService : DataService {
         // remove old AppUser if it exists
         var appUsers = filterAppUser(by: currentAppUser.uid)
 
-        // add new AppUser
-        appUsers.append(currentAppUser)
+        // insert new AppUser in first position
+        appUsers.insert(currentAppUser, at: 0)
 
         // and save
         save(appUsers: appUsers)
