@@ -86,7 +86,13 @@ class SigninPresenter: SigninPresenterProtocol {
 
 
         // SIGN IN BUTTON
-        signInButton.setTitle("Continue as \(appUser.displayName ?? appUser.userName ?? appUser.uid)", for: .normal)
+        if let displayName = appUser.displayName, !displayName.isEmpty {
+            signInButton.setTitle("Continue as \(displayName)", for: .normal)
+        } else if let userName = appUser.userName, !userName.isEmpty {
+            signInButton.setTitle("Continue as \(userName)", for: .normal)
+        } else {
+            signInButton.setTitle("Continue as \(appUser.uid)", for: .normal)
+        }
         panelView.addSubview(signInButton)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
