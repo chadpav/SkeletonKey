@@ -39,7 +39,7 @@ class DeletedUserStateTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertTrue(manager?.isUserSet ?? false)
         XCTAssertEqual(manager?.appDeviceID, deviceID)
-        XCTAssertNotEqual(manager?.currentAppUserID, userID)
+        XCTAssertNotEqual(manager?.currentAppUser?.uid, userID)
     }
 
     func testDeletedOneOfMultipleUsersClearsCurrentUser() {
@@ -63,7 +63,7 @@ class DeletedUserStateTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertTrue(manager.isUserSet)
         XCTAssertEqual(manager.appDeviceID, deviceID)
-        XCTAssertNotEqual(manager.currentAppUserID, userID)
+        XCTAssertNotEqual(manager.currentAppUser?.uid, userID)
     }
 
 }

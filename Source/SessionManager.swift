@@ -23,11 +23,11 @@ public class SessionManager {
     }
 
     /**
-     The unique ID of the current app user
+     The current AppUser
      */
-    public var currentAppUserID: String? {
-        guard isUserSet else { return nil }
-        return dataStoreService.currentAppUserID
+    public var currentAppUser: AppUser? {
+        guard let uid = dataStoreService.currentAppUserID else { return nil }
+        return appUsers.first(where: { $0.uid == uid })
     }
 
     /**
@@ -55,6 +55,10 @@ public class SessionManager {
 
     // MARK: Functions
 
+    /**
+     Updates AppUser in Keychain. Will not save an appUser unless they already exist. Will overwrite all
+     properties, you should request current appUser and update only properties you want to change.
+    */
     public func updateAppUser(_ appUser: AppUser) {
         if appUsers.filter({ return $0.uid == appUser.uid }).count > 0 {
             dataStoreService.save(currentAppUser: appUser)

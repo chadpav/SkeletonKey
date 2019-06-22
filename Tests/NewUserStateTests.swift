@@ -40,7 +40,7 @@ class NewUserStateTests: XCTestCase {
 
         XCTAssertEqual(manager.checkState(), SessionState.newSession)
         XCTAssertNotNil(manager.appDeviceID)
-        XCTAssertNotNil(manager.currentAppUserID)
+        XCTAssertNotNil(manager.currentAppUser)
         XCTAssertFalse(manager.appUsers.isEmpty)
         XCTAssertTrue(manager.isUserSet)
     }

@@ -83,22 +83,20 @@ class SessionManagerTests: XCTestCase {
         let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
 
         let manager = SessionManager(configuration: config)
-        let currentUserID = manager.currentAppUserID
+        let currentUserID = manager.currentAppUser?.uid
 
         XCTAssertNil(currentUserID)
     }
 
     func testReturnUserIfUserIsSet() {
         let mock = MockDataService()
-        let someUserID = "someUserID"
-        mock.currentAppUserID = someUserID
-        mock.isUserSet = true
+        mock.save(currentAppUser: testAppUser)
         let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
 
         let manager = SessionManager(configuration: config)
-        let currentUserID = manager.currentAppUserID
+        let currentUserID = manager.currentAppUser?.uid
 
-        XCTAssertEqual(currentUserID, someUserID)
+        XCTAssertEqual(currentUserID, testAppUser.uid)
     }
 
     func testRemoveCurrentUser() {
@@ -108,15 +106,15 @@ class SessionManagerTests: XCTestCase {
         let manager = SessionManager(configuration: config)
 
         // Assert preconditions
-        XCTAssertNotNil(manager.currentAppUserID)
+        XCTAssertNotNil(manager.currentAppUser)
         XCTAssertEqual(manager.appUsers.count, 1)
 
         // Test
-        if let uid = manager.currentAppUserID {
+        if let uid = manager.currentAppUser?.uid {
             manager.removeAppUser(uid: uid)
         }
 
-        XCTAssertNil(manager.currentAppUserID)
+        XCTAssertNil(manager.currentAppUser)
         XCTAssertFalse(manager.isUserSet)
         XCTAssertEqual(manager.appUsers.count, 0)
     }
@@ -131,13 +129,13 @@ class SessionManagerTests: XCTestCase {
         let manager = SessionManager(configuration: config)
 
         // Assert preconditions
-        XCTAssertEqual(manager.currentAppUserID, testAppUser.uid)
+        XCTAssertEqual(manager.currentAppUser?.uid, testAppUser.uid)
         XCTAssertEqual(manager.appUsers.count, 2)
 
         // Test
         manager.removeAppUser(uid: otherAppUser.uid)
 
-        XCTAssertEqual(manager.currentAppUserID, testAppUser.uid)
+        XCTAssertEqual(manager.currentAppUser?.uid, testAppUser.uid)
         XCTAssertTrue(manager.isUserSet)
         XCTAssertEqual(manager.appUsers.count, 1)
     }
@@ -153,12 +151,12 @@ class SessionManagerTests: XCTestCase {
         let manager = SessionManager(configuration: config)
 
         // Assert preconditions
-        XCTAssertEqual(manager.currentAppUserID, appUser.uid)
+        XCTAssertEqual(manager.currentAppUser?.uid, appUser.uid)
 
         let updatedAppUser = AppUser(uid: "aUser", displayName: "Johnny Appleseed", userName: "japple@icloud.com", password: "pass1234")
         manager.updateAppUser(updatedAppUser)
 
-        XCTAssertEqual(manager.currentAppUserID, appUser.uid)
+        XCTAssertEqual(manager.currentAppUser?.uid, appUser.uid)
         XCTAssertEqual(manager.appUsers.first?.password, "pass1234")
     }
 
