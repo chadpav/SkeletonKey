@@ -63,8 +63,8 @@ class SigninPresenter: SigninPresenterProtocol {
 
     func present(appUser: AppUser) {
         guard let vc = UIApplication.shared.topMostViewController(),
-            let view = vc.viewIfLoaded,
-            let displayName = appUser.displayName else { return }
+            let view = vc.viewIfLoaded
+            else { return }
 
         selectedAppUser = appUser
 
@@ -86,7 +86,7 @@ class SigninPresenter: SigninPresenterProtocol {
 
 
         // SIGN IN BUTTON
-        signInButton.setTitle("\(displayName.isEmpty ? "User with no name" : displayName)", for: .normal)
+        signInButton.setTitle("Continue as \(appUser.displayName ?? appUser.userName ?? appUser.uid)", for: .normal)
         panelView.addSubview(signInButton)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
