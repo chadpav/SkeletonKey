@@ -38,13 +38,21 @@ class SigninPresenter: SigninPresenterProtocol {
         return view
     }()
 
+    lazy var signInLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
+        label.text = "Continue with existing user?"
+        return label
+    }()
+
     lazy var signInButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = dodgerBlue
         button.layer.cornerRadius = 10.0
         button.layer.masksToBounds = true
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
         button.addTarget(self, action: #selector(tappedSignIn), for: .touchUpInside)
         button.isUserInteractionEnabled = true
         return button
@@ -52,9 +60,9 @@ class SigninPresenter: SigninPresenterProtocol {
 
     lazy var skipButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Create new user", for: .normal)
+        button.setTitle("Create New User", for: .normal)
         button.setTitleColor(dodgerBlue, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .regular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .regular)
         button.addTarget(self, action: #selector(tappedCreateNewUser), for: .touchUpInside)
         return button
     }()
@@ -68,38 +76,43 @@ class SigninPresenter: SigninPresenterProtocol {
 
         selectedAppUser = appUser
 
-        view.addSubview(dimView)
-        dimView.translatesAutoresizingMaskIntoConstraints = false
-        dimView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        dimView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        dimView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        dimView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
         // PANEL
-        dimView.addSubview(panelView)
+        view.addSubview(panelView)
         panelView.translatesAutoresizingMaskIntoConstraints = false
-        panelView.leadingAnchor.constraint(equalTo: dimView.leadingAnchor).isActive = true
-        panelView.trailingAnchor.constraint(equalTo: dimView.trailingAnchor).isActive = true
+        panelView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        panelView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         panelView.heightAnchor.constraint(equalToConstant: panelHeight).isActive = true
-        constraint = NSLayoutConstraint(item: panelView, attribute: .bottom, relatedBy: .equal, toItem: dimView, attribute: .bottom, multiplier: 1, constant: panelHeight * 1)
+        constraint = NSLayoutConstraint(item: panelView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: panelHeight * 1)
         view.addConstraint(constraint!)
 
+        // DIM VIEW
+        panelView.addSubview(dimView)
+        dimView.translatesAutoresizingMaskIntoConstraints = false
+        dimView.leadingAnchor.constraint(equalTo: panelView.leadingAnchor).isActive = true
+        dimView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        dimView.trailingAnchor.constraint(equalTo: panelView.trailingAnchor).isActive = true
+        dimView.bottomAnchor.constraint(equalTo: panelView.topAnchor).isActive = true
+
+        // SIGN IN LABEL
+        panelView.addSubview(signInLabel)
+        signInLabel.translatesAutoresizingMaskIntoConstraints = false
+        signInLabel.topAnchor.constraint(equalTo: panelView.topAnchor, constant: 18.0).isActive = true
+        signInLabel.centerXAnchor.constraint(equalTo: panelView.centerXAnchor).isActive = true
 
         // SIGN IN BUTTON
         if let displayName = appUser.displayName, !displayName.isEmpty {
-            signInButton.setTitle("Continue as \(displayName)", for: .normal)
+            signInButton.setTitle("Use \"\(displayName)\"", for: .normal)
         } else if let userName = appUser.userName, !userName.isEmpty {
-            signInButton.setTitle("Continue as \(userName)", for: .normal)
+            signInButton.setTitle("Use \"\(userName)\"", for: .normal)
         } else {
-            signInButton.setTitle("Continue as \(appUser.uid)", for: .normal)
+            signInButton.setTitle("Use Existing User", for: .normal)
         }
         panelView.addSubview(signInButton)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        signInButton.widthAnchor.constraint(equalToConstant: 250.0).isActive = true
-        signInButton.topAnchor.constraint(equalTo: panelView.topAnchor, constant: 50.0).isActive = true
-        signInButton.centerXAnchor.constraint(equalTo: panelView.centerXAnchor, constant: 0.0).isActive = true
-
+        signInButton.widthAnchor.constraint(equalToConstant: 275.0).isActive = true
+        signInButton.topAnchor.constraint(equalTo: panelView.topAnchor, constant: 55.0).isActive = true
+        signInButton.centerXAnchor.constraint(equalTo: panelView.centerXAnchor).isActive = true
 
         // SKIP BUTTON
         panelView.addSubview(skipButton)

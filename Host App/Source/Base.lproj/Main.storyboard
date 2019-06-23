@@ -12,7 +12,7 @@
         <!--SkeletonKey Demo-->
         <scene sceneID="v6m-R5-tdt">
             <objects>
-                <tableViewController title="SkeletonKey Demo" id="VvX-kk-hpu" customClass="ViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="SkeletonKey Demo" id="VvX-kk-hpu" customClass="ViewController" customModule="Host_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CT2-Ld-61O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

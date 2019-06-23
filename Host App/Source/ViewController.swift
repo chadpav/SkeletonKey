@@ -86,7 +86,7 @@ class ViewController: UITableViewController {
                 cell.detailTextLabel?.text = "\(manager.isUserSet)"
             case 2:
                 cell.textLabel?.text = "Current User ID"
-                cell.detailTextLabel?.text = manager.currentAppUserID
+                cell.detailTextLabel?.text = manager.currentAppUser?.uid ?? ""
             case 3:
                 cell.textLabel?.text = "App Device ID"
                 cell.detailTextLabel?.text = manager.appDeviceID
