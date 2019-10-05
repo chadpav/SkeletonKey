@@ -33,6 +33,7 @@
 		D65E2CB6228AE200001B612E /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB5228AE200001B612E /* SessionManagerTests.swift */; };
 		D65E2CBA228AECE0001B612E /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CB8228AE94F001B612E /* MockDataService.swift */; };
 		D674A497228BB11500D543B8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D674A496228BB11500D543B8 /* Keychain.swift */; };
+		D6F90D7823493A0100A85E3A /* NoPresentationSigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F90D7723493A0100A85E3A /* NoPresentationSigninPresenter.swift */; };
 		D90DA8DE22542C80005B35DE /* SkeletonKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90DA8D422542C80005B35DE /* SkeletonKey.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		D65E2CB5228AE200001B612E /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		D65E2CB8228AE94F001B612E /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		D674A496228BB11500D543B8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		D6F90D7723493A0100A85E3A /* NoPresentationSigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPresentationSigninPresenter.swift; sourceTree = "<group>"; };
 		D90DA8D422542C80005B35DE /* SkeletonKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SkeletonKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90DA8D822542C80005B35DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D90DA8DD22542C80005B35DE /* SkeletonKeyTests - iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SkeletonKeyTests - iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 		D6275EBA229185DE00B6E625 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D6F90D7723493A0100A85E3A /* NoPresentationSigninPresenter.swift */,
 				D6275EBD22918ED500B6E625 /* SigninPresenter.swift */,
 				D6275EB8229184D500B6E625 /* TopMostViewController.swift */,
 			);
@@ -270,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = SkeletonKey;
 				TargetAttributes = {
 					D90DA8D322542C80005B35DE = {
@@ -288,6 +291,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D90DA8CA22542C80005B35DE;
 			productRefGroup = D90DA8D522542C80005B35DE /* Products */;
@@ -325,6 +329,7 @@
 				D6275EAD228EFC8300B6E625 /* NewDeviceState.swift in Sources */,
 				D65E2CB2228AE187001B612E /* NewUserState.swift in Sources */,
 				D65E2CAD2289F3E2001B612E /* AppUser.swift in Sources */,
+				D6F90D7823493A0100A85E3A /* NoPresentationSigninPresenter.swift in Sources */,
 				D65E2CAF228AE148001B612E /* StateProcessor.swift in Sources */,
 				D6275EC02291C70B00B6E625 /* DeletedUserState.swift in Sources */,
 				D65E2CAA2289F0BF001B612E /* DataStoreService.swift in Sources */,
@@ -497,6 +502,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -509,6 +515,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKey-iOS";
 				PRODUCT_NAME = SkeletonKey;
 				SKIP_INSTALL = YES;
@@ -524,6 +531,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -536,6 +544,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SkeletonKey.SkeletonKey-iOS";
 				PRODUCT_NAME = SkeletonKey;
 				SKIP_INSTALL = YES;

@@ -21,7 +21,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
 
         if let bundleID = Bundle.main.bundleIdentifier {
-            let config = Configuration(userProvider: UserProvider(), service: bundleID)
+            let config = Configuration(userProvider: UserProvider(), service: bundleID, promptReturningUsers: true)
             manager = SessionManager(configuration: config)
         }
 

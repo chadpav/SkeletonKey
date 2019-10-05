@@ -58,6 +58,19 @@ class SigninPresenter: SigninPresenterProtocol {
         return button
     }()
 
+    lazy var signInActivityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+
+    lazy var skipActivityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.tintColor = dodgerBlue
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+
     lazy var skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create New User", for: .normal)
@@ -120,14 +133,37 @@ class SigninPresenter: SigninPresenterProtocol {
         skipButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 25.0).isActive = true
         skipButton.centerXAnchor.constraint(equalTo: panelView.centerXAnchor, constant: 0.0).isActive = true
 
+        // ACTIVITY INDICATORS
+        signInButton.addSubview(signInActivityIndicator)
+        signInActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        signInActivityIndicator.centerYAnchor.constraint(equalTo: signInButton.centerYAnchor).isActive = true
+        signInActivityIndicator.centerXAnchor.constraint(equalTo: signInButton.centerXAnchor).isActive = true
+        skipButton.addSubview(skipActivityIndicator)
+        skipActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        skipActivityIndicator.centerYAnchor.constraint(equalTo: skipButton.centerYAnchor).isActive = true
+        skipActivityIndicator.centerXAnchor.constraint(equalTo: skipButton.centerXAnchor).isActive = true
+
         // ANIMATE IN
+        animateIn(to: view)
+    }
+
+    // MARK: - Animations
+
+    func animateIn(to view: UIView) {
         view.layoutIfNeeded()
         constraint?.constant = 0.0
         UIView.animate(withDuration: 0.2) {
             self.dimView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
             view.layoutIfNeeded()
         }
+    }
 
+    func animateOut() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.panelView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        }) { finished in
+            self.panelView.removeFromSuperview()
+        }
     }
 
     // MARK: - Button Actions
@@ -137,15 +173,22 @@ class SigninPresenter: SigninPresenterProtocol {
         guard let selectedAppUser = selectedAppUser else { return }
 
         sender.isEnabled = false
+        sender.titleLabel?.text = ""
+        signInActivityIndicator.startAnimating()
+
         delegate?.userSelected(appUser: selectedAppUser)
-        dimView.removeFromSuperview()
+        animateOut()
     }
 
     @objc
     func tappedCreateNewUser(sender: UIButton) {
         sender.isEnabled = false
+
+        skipButton.titleLabel?.text = ""
+        skipActivityIndicator.startAnimating()
+
         delegate?.createNewUser()
-        dimView.removeFromSuperview()
+        animateOut()
     }
 
 }

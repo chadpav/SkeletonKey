@@ -50,7 +50,13 @@ public class SessionManager {
     public init(configuration: Configuration, _ presenter: SigninPresenterProtocol? = nil) {
         self.configuration = configuration
         self.dataStoreService = configuration.dataService
-        self.presenter = presenter ?? SigninPresenter()
+        if let presenter = presenter {
+            self.presenter = presenter
+        } else {
+            self.presenter = configuration.promptReturningUsers
+                ? SigninPresenter()
+                : NoPresentationSigninPresenter()
+        }
     }
 
     // MARK: Functions

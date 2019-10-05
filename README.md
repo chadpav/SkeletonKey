@@ -75,6 +75,12 @@ github "chadpav/SkeletonKey" ~> 0.1
 
 Run `carthage update` to build the framework and drag the built `SkeletonKey`.framework into your Xcode project.
 
+### Integration
+
+1. Configure SkeletonKey in your AppDelegate
+2. Implement UserProvider to return an AppUser to SkeletonKey for when the user selected Create User
+3. Optionally implement a DeviceKeyGenerator.
+3. Setup SessionManager global object in AppDelegate
 
 ## Author
 
