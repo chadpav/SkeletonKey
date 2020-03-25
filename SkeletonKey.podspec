@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SkeletonKey'
-  s.version = '0.2.0'
+  s.version = '0.3.0'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.summary = 'Provide a way for a user to gain access to the app.'
 

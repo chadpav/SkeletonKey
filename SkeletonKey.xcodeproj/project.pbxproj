@@ -23,6 +23,9 @@
 		D6275EC02291C70B00B6E625 /* DeletedUserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */; };
 		D6275EC32291DA2A00B6E625 /* MockSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */; };
 		D6275EC52291DEDC00B6E625 /* DeletedUserStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */; };
+		D65A55A8242BAAC8000E76D3 /* SkeletonKey.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D65A55A5242BAAC7000E76D3 /* SkeletonKey.podspec */; };
+		D65A55A9242BAAC8000E76D3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D65A55A6242BAAC8000E76D3 /* LICENSE */; };
+		D65A55AA242BAAC8000E76D3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D65A55A7242BAAC8000E76D3 /* README.md */; };
 		D65E2CA522899ADE001B612E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA422899ADE001B612E /* SessionManager.swift */; };
 		D65E2CA72289A0EB001B612E /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA62289A0EB001B612E /* SessionState.swift */; };
 		D65E2CAA2289F0BF001B612E /* DataStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E2CA92289F0BF001B612E /* DataStoreService.swift */; };
@@ -64,6 +67,9 @@
 		D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserState.swift; sourceTree = "<group>"; };
 		D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignInPresenter.swift; sourceTree = "<group>"; };
 		D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserStateTests.swift; sourceTree = "<group>"; };
+		D65A55A5242BAAC7000E76D3 /* SkeletonKey.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = SkeletonKey.podspec; sourceTree = SOURCE_ROOT; };
+		D65A55A6242BAAC8000E76D3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		D65A55A7242BAAC8000E76D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D65E2CA422899ADE001B612E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D65E2CA62289A0EB001B612E /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
 		D65E2CA92289F0BF001B612E /* DataStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreService.swift; sourceTree = "<group>"; };
@@ -119,6 +125,16 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		D65A55A4242BAAA2000E76D3 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				D65A55A6242BAAC8000E76D3 /* LICENSE */,
+				D65A55A7242BAAC8000E76D3 /* README.md */,
+				D65A55A5242BAAC7000E76D3 /* SkeletonKey.podspec */,
+			);
+			path = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
 		D65E2CA82289F0A7001B612E /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +179,7 @@
 		D90DA8CA22542C80005B35DE = {
 			isa = PBXGroup;
 			children = (
+				D65A55A4242BAAA2000E76D3 /* Podspec Metadata */,
 				D90DA8D622542C80005B35DE /* Source */,
 				D90DA8EE22542E0B005B35DE /* Resources */,
 				D90DA8E122542C80005B35DE /* Tests */,
@@ -309,6 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65A55AA242BAAC8000E76D3 /* README.md in Resources */,
+				D65A55A9242BAAC8000E76D3 /* LICENSE in Resources */,
+				D65A55A8242BAAC8000E76D3 /* SkeletonKey.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
