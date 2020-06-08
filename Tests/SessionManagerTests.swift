@@ -129,7 +129,7 @@ class SessionManagerTests: XCTestCase {
         let manager = SessionManager(configuration: config)
 
         // Assert preconditions
-        XCTAssertEqual(manager.currentAppUser?.uid, testAppUser.uid)
+        XCTAssertEqual(manager.currentAppUser?.uid, otherAppUser.uid)
         XCTAssertEqual(manager.appUsers.count, 2)
 
         // Test
@@ -174,5 +174,54 @@ class SessionManagerTests: XCTestCase {
 
         XCTAssertEqual(manager.appUsers.count, 0)
         XCTAssertFalse(manager.isUserSet)
+    }
+
+    func testAddAppUser() {
+        let mock = MockDataService()
+        let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
+        let manager = SessionManager(configuration: config)
+
+        // precondition
+        XCTAssertNil(manager.currentAppUser)
+        XCTAssertFalse(manager.isUserSet)
+
+        let addedAppUser = AppUser(uid: "aUser", displayName: "Johnny Applesauce", userName: "japple@icloud.com", password: "pass1234")
+        try! manager.addAppUser(addedAppUser)
+
+        XCTAssertNotNil(manager.currentAppUser)
+        XCTAssertEqual(manager.appUsers.count, 1)
+        XCTAssertTrue(manager.isUserSet)
+    }
+
+    func testDuplicateAddAppUserThrows() {
+        let mock = MockDataService()
+        let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
+        let manager = SessionManager(configuration: config)
+
+        let addedAppUser = AppUser(uid: "aUser", displayName: "Johnny Applesauce", userName: "japple@icloud.com", password: "pass1234")
+        try! manager.addAppUser(addedAppUser)
+
+        XCTAssertThrowsError(try manager.addAppUser(addedAppUser))
+    }
+
+    func testAddAdditionalAppUserDoesNotUpdateCurrentUser() {
+        let mock = MockDataService()
+        let config = Configuration(userProvider: MockUserProvider(), dataService: mock)
+        let manager = SessionManager(configuration: config)
+
+        let addedAppUser = AppUser(uid: "aUser", displayName: "Johnny Applesauce", userName: "japple@icloud.com", password: "pass1234")
+        try! manager.addAppUser(addedAppUser)
+
+        // preconditions
+        XCTAssertEqual(addedAppUser, manager.currentAppUser)
+        XCTAssertTrue(manager.isUserSet)
+        XCTAssertEqual(manager.appUsers.count, 1)
+
+        let anotherAppUser = AppUser(uid: "anotherUser", displayName: "Ben Plumsauce", userName: "ben@icloud.com", password: "pass1234")
+        try! manager.addAppUser(anotherAppUser)
+
+        XCTAssertNotEqual(anotherAppUser, manager.currentAppUser)
+        XCTAssertTrue(manager.isUserSet)
+        XCTAssertEqual(manager.appUsers.count, 2)
     }
 }

@@ -62,6 +62,23 @@ public class SessionManager {
     // MARK: Functions
 
     /**
+    Adds an AppUser in the Keychain. Will throw a ValidateError if an existing AppUser with the same 'uid' is found.
+     */
+    public func addAppUser(_ appUser: AppUser) throws {
+        // check for duplicates, user should use update for existing users to avoid implicit behavior
+        guard appUsers.filter({ return $0.uid == appUser.uid }).count == 0 else {
+            throw ValidationError.duplicateFound
+        }
+
+        dataStoreService.save(currentAppUser: appUser)
+
+        if currentAppUser == nil {
+            dataStoreService.isUserSet = true
+            dataStoreService.currentAppUserID = appUser.uid
+        }
+    }
+
+    /**
      Updates AppUser in Keychain. Will not save an appUser unless they already exist. Will overwrite all
      properties, you should request current appUser and update only properties you want to change.
     */
@@ -140,12 +157,8 @@ public class SessionManager {
     }
 
     internal func finish() {
-        if let appUser = dataStoreService.getAppUser(by: dataStoreService.currentAppUserID ?? "") {
-            onCompletion?(appUser, nil)
-        } else {
-            // TODO: return an error
-            onCompletion?(nil, nil)
-        }
+        let appUser = dataStoreService.getAppUser(by: dataStoreService.currentAppUserID ?? "")
+        onCompletion?(appUser, nil)
     }
 }
 

@@ -37,7 +37,7 @@ class DeletedUserStateTests: XCTestCase {
         })
 
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssertTrue(manager?.isUserSet ?? false)
+        XCTAssertFalse(manager?.isUserSet ?? false)
         XCTAssertEqual(manager?.appDeviceID, deviceID)
         XCTAssertNotEqual(manager?.currentAppUser?.uid, userID)
     }
@@ -61,7 +61,7 @@ class DeletedUserStateTests: XCTestCase {
         })
 
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssertTrue(manager.isUserSet)
+        XCTAssertFalse(manager.isUserSet)
         XCTAssertEqual(manager.appDeviceID, deviceID)
         XCTAssertNotEqual(manager.currentAppUser?.uid, userID)
     }

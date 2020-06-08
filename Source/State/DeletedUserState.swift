@@ -28,5 +28,7 @@ class DeletedUserState: StateProcessor {
 
         dataService.isUserSet = false
         dataService.currentAppUserID = nil
+
+        manager.finish()
     }
 }

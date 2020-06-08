@@ -37,8 +37,6 @@ class NewDeviceStateTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
 
         XCTAssertNotNil(manager?.appDeviceID)
-        XCTAssertNotNil(manager?.currentAppUser)
-        XCTAssertTrue(manager?.isUserSet ?? false)
     }
 
 }

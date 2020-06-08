@@ -69,8 +69,9 @@ internal class DataStoreService : DataService {
         // remove old AppUser if it exists
         var appUsers = filterAppUser(by: currentAppUser.uid)
 
-        // insert new AppUser in first position
-        appUsers.insert(currentAppUser, at: 0)
+        // TODO: this changes position of app user which could alter who is the current app user
+        // I am going to remove this from Skeleton Key to simplify it.
+        appUsers.append(currentAppUser)
 
         // and save
         save(appUsers: appUsers)

@@ -21,3 +21,9 @@ public struct AppUser: Codable {
         self.password = password
     }
 }
+
+extension AppUser: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.uid == rhs.uid
+    }
+}

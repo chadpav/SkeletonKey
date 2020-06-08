@@ -11,9 +11,10 @@ import SkeletonKey
 
 class MockDataService: DataService {
     private var appUsers = [AppUser]()
+
     public var appDeviceID: String?
     public var currentAppUserID: String?
-    public var isUserSet: Bool = false
+    public var isUserSet = false
 
     public init() { }
     
@@ -23,9 +24,13 @@ class MockDataService: DataService {
 
     public func save(currentAppUser: AppUser) {
         appUsers.removeAll { $0.uid == currentAppUser.uid }
-        appUsers.append(currentAppUser)
-        currentAppUserID = currentAppUser.uid
-        isUserSet = true
+        if appUsers.isEmpty {
+            appUsers.append(currentAppUser)
+            currentAppUserID = currentAppUser.uid
+            isUserSet = true
+        } else {
+            appUsers.append(currentAppUser)
+        }
     }
 
     public func getAppUser(by uid: String) -> AppUser? {
@@ -38,6 +43,13 @@ class MockDataService: DataService {
 
     func removeAppUser(with uid: String) {
         appUsers.removeAll { $0.uid == uid }
+        if appUsers.isEmpty {
+            currentAppUserID = nil
+            isUserSet = false
+        } else {
+            currentAppUserID = appUsers.first?.uid
+            isUserSet = true
+        }
     }
 
     func reset() {

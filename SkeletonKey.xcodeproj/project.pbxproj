@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6237AD2248E9A3200B28032 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6237AD1248E9A3200B28032 /* ValidationError.swift */; };
 		D6275E9E228C3DAB00B6E625 /* KeyGenStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275E9D228C3DAB00B6E625 /* KeyGenStrategy.swift */; };
 		D6275EA0228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275E9F228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift */; };
 		D6275EA2228C3E5400B6E625 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275EA1228C3E5400B6E625 /* Configuration.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6237AD1248E9A3200B28032 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		D6275E9D228C3DAB00B6E625 /* KeyGenStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyGenStrategy.swift; sourceTree = "<group>"; };
 		D6275E9F228C3DEE00B6E625 /* UUIDKeyGenStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDKeyGenStrategy.swift; sourceTree = "<group>"; };
 		D6275EA1228C3E5400B6E625 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		D6275EBF2291C70B00B6E625 /* DeletedUserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserState.swift; sourceTree = "<group>"; };
 		D6275EC12291D97400B6E625 /* MockSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignInPresenter.swift; sourceTree = "<group>"; };
 		D6275EC42291DEDC00B6E625 /* DeletedUserStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedUserStateTests.swift; sourceTree = "<group>"; };
-		D65A55A5242BAAC7000E76D3 /* SkeletonKey.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = SkeletonKey.podspec; sourceTree = SOURCE_ROOT; };
+		D65A55A5242BAAC7000E76D3 /* SkeletonKey.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkeletonKey.podspec; sourceTree = SOURCE_ROOT; };
 		D65A55A6242BAAC8000E76D3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		D65A55A7242BAAC8000E76D3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D65E2CA422899ADE001B612E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6237AD0248E9A1900B28032 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D6237AD1248E9A3200B28032 /* ValidationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		D6275E9C228C3D8500B6E625 /* Key Gen */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		D90DA8D622542C80005B35DE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D6237AD0248E9A1900B28032 /* Errors */,
 				D6275EBA229185DE00B6E625 /* Presentation */,
 				D6275E9C228C3D8500B6E625 /* Key Gen */,
 				D65E2CB0228AE164001B612E /* State */,
@@ -353,6 +364,7 @@
 				D65E2CAF228AE148001B612E /* StateProcessor.swift in Sources */,
 				D6275EC02291C70B00B6E625 /* DeletedUserState.swift in Sources */,
 				D65E2CAA2289F0BF001B612E /* DataStoreService.swift in Sources */,
+				D6237AD2248E9A3200B28032 /* ValidationError.swift in Sources */,
 				D65E2CA522899ADE001B612E /* SessionManager.swift in Sources */,
 				D6275EA6228D914D00B6E625 /* IUserProvider.swift in Sources */,
 				D6275EBE22918ED500B6E625 /* SigninPresenter.swift in Sources */,
