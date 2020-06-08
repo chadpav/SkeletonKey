@@ -28,14 +28,5 @@ class DeletedUserState: StateProcessor {
 
         dataService.isUserSet = false
         dataService.currentAppUserID = nil
-
-        // If there is still at least one user then present signin
-        if let firstUser = appUsers.first {
-            presenter.delegate = manager
-            presenter.present(appUser: firstUser)
-        } else {
-            manager.createNewUser()
-        }
-        
     }
 }
