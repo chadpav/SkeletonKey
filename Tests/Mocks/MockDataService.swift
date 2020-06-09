@@ -58,4 +58,8 @@ class MockDataService: DataService {
         currentAppUserID = nil
         isUserSet = false
     }
+
+    func debugPrint() {
+
+    }
 }
