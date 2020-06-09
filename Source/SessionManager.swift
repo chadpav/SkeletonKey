@@ -152,6 +152,10 @@ public class SessionManager {
         dataStoreService.removeAppUser(with: uid)
     }
 
+    public func debugPrint() {
+        dataStoreService.debugPrint()
+    }
+
     public func reset() {
         dataStoreService.reset()
     }

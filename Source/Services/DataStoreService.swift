@@ -18,6 +18,7 @@ public protocol DataService {
     func getAppUser(by uid: String) -> AppUser?
     func getAppUsers() -> [AppUser]
     func reset()
+    func debugPrint()
 }
 
 internal class DataStoreService : DataService {
@@ -62,7 +63,11 @@ internal class DataStoreService : DataService {
     internal func save(appDeviceID: String) {
         guard currentAppUserID == nil else { fatalError("Device ID already set.") }
 
-        try? keychain.set(appDeviceID, key: KEYS.appDeviceIDKey.rawValue)
+        try? keychain
+            .synchronizable(false)
+            .label("Device ID")
+            .comment("A unique identifier for this device. Should not sync across devices.")
+            .set(appDeviceID, key: KEYS.appDeviceIDKey.rawValue)
     }
 
     internal func save(currentAppUser: AppUser) {
@@ -103,6 +108,40 @@ internal class DataStoreService : DataService {
         defaults.removeObject(forKey: KEYS.isUserSetKey.rawValue)
     }
 
+    /*
+     Print debug info.
+     */
+    internal func debugPrint() {
+        print("=== DEBUG SKELETON KEY ===")
+        print("= USER DEFAULTS BEGIN =")
+        print(defaults.dictionaryRepresentation())
+        print(defaults.persistentDomain(forName: ""))
+        print("= USER DEFAULTS END =")
+        print("= KEYCHAIN BEGIN =")
+        for key in keychain.allKeys() {
+            do {
+                print("key=\(key)")
+                if let attributes = try keychain.get(key) { $0 } {
+                    print("label=\(attributes.label)")
+                    print("comment=\(attributes.comment)")
+                    print("creationDate=\(attributes.creationDate)")
+                    print("modificationDate=\(attributes.modificationDate)")
+                    print("synchronizable=\(attributes.synchronizable)")
+                    print("data=\(attributes.data)")
+                }
+            } catch let error {
+                print("\(error)")
+            }
+        }
+
+        for item in keychain.allItems() {
+            print("item: \(item)")
+        }
+        
+        print(" == KEYCHAIN END =")
+        print("=== DEBUG SKELETON KEY END ===")
+    }
+
     // MARK: Helpers
 
     private func filterAppUser(by uid: String) -> [AppUser] {
@@ -114,6 +153,10 @@ internal class DataStoreService : DataService {
     private func save(appUsers: [AppUser]) {
         // archive, store, and sync across iCloud keychain
         let data = try! PropertyListEncoder().encode(appUsers)
-        try? keychain.synchronizable(true).set(data, key: KEYS.appUsersKey.rawValue)
+        try? keychain
+            .synchronizable(true)
+            .label("App Users")
+            .comment("List of App Users stored for this app service.")
+            .set(data, key: KEYS.appUsersKey.rawValue)
     }
 }
