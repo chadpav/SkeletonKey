@@ -115,19 +115,19 @@ internal class DataStoreService : DataService {
         print("=== DEBUG SKELETON KEY ===")
         print("= USER DEFAULTS BEGIN =")
         print(defaults.dictionaryRepresentation())
-        print(defaults.persistentDomain(forName: ""))
+        print(defaults.persistentDomain(forName: "") ?? "")
         print("= USER DEFAULTS END =")
         print("= KEYCHAIN BEGIN =")
         for key in keychain.allKeys() {
             do {
                 print("key=\(key)")
-                if let attributes = try keychain.get(key) { $0 } {
-                    print("label=\(attributes.label)")
-                    print("comment=\(attributes.comment)")
-                    print("creationDate=\(attributes.creationDate)")
-                    print("modificationDate=\(attributes.modificationDate)")
-                    print("synchronizable=\(attributes.synchronizable)")
-                    print("data=\(attributes.data)")
+                if let attributes = try keychain.get(key, handler: { $0 }) {
+                    print("label=\(attributes.label ?? "")")
+                    print("comment=\(attributes.comment ?? "")")
+                    print("creationDate=\(attributes.creationDate ?? Date())")
+                    print("modificationDate=\(attributes.modificationDate ?? Date())")
+                    print("synchronizable=\(attributes.synchronizable ?? false)")
+                    print("data=\(attributes.data ?? Data())")
                 }
             } catch let error {
                 print("\(error)")
