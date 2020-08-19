@@ -15,12 +15,14 @@ public struct Configuration {
     let defaults: UserDefaults
     let dataService: DataService
     let promptReturningUsers: Bool
+    let multiUserIsEnabled: Bool
 
     public init(userProvider: IUserProvider,
                 service: String? = nil,
                 deviceKeyGenerator: KeyGenStrategy? = nil,
                 dataService: DataService? = nil,
-                promptReturningUsers: Bool = true) {
+                promptReturningUsers: Bool = true,
+                enableMultiUser multiUserIsEnabled: Bool = false) {
 
         let keychainService = service ?? Bundle.main.bundleIdentifier ?? ""
         keychain = Keychain(service: keychainService)
@@ -28,6 +30,7 @@ public struct Configuration {
         self.userProvider = userProvider
         self.deviceKeyGenerator = deviceKeyGenerator ?? UUIDKeyGenStrategy()
         self.promptReturningUsers = promptReturningUsers
+        self.multiUserIsEnabled = multiUserIsEnabled
 
         if let dataService = dataService {
             self.dataService = dataService

@@ -61,7 +61,7 @@ internal class DataStoreService : DataService {
     }
     
     internal func save(appDeviceID: String) {
-        guard currentAppUserID == nil else { fatalError("Device ID already set.") }
+        guard self.appDeviceID == nil else { fatalError("Device ID already set.") }
 
         try? keychain
             .synchronizable(false)

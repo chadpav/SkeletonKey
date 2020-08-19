@@ -70,11 +70,13 @@ public class SessionManager {
             throw ValidationError.duplicateFound
         }
 
-        dataStoreService.save(currentAppUser: appUser)
+        if appUsers.count == 0 || configuration.multiUserIsEnabled {
+            dataStoreService.save(currentAppUser: appUser)
 
-        if currentAppUser == nil {
-            dataStoreService.isUserSet = true
-            dataStoreService.currentAppUserID = appUser.uid
+            if currentAppUser == nil {
+                dataStoreService.isUserSet = true
+                dataStoreService.currentAppUserID = appUser.uid
+            }
         }
     }
 
